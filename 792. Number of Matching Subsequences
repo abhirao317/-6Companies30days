@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int numMatchingSubseq(string s, vector<string>& words) {
+        int c=0;
+        for(auto x:words){
+            bool flag =true;
+            int l=0;
+            for(int i=0;i<x.size();i++){
+                auto found= s.find(x[i],l);
+                    if(found>s.size() ){
+                         flag =false;
+                         break;
+                    }
+                    l=found+1;
+
+                }
+            if(flag==true){
+                c++;
+                cout<<x;
+            }
+        }
+        return c;
+    }
+};
